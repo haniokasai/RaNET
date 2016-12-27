@@ -18,12 +18,12 @@ namespace MiNET.Service
 	{
 		private static readonly ILog Log = LogManager.GetLogger(typeof (MiNetServer));
 
-		private MiNetServer _server;
+		public MiNetServer _server;
 
 		/// <summary>
 		///     Starts this instance.
 		/// </summary>
-		private void Start()
+		public void Start()
 		{
 			Log.Info("Starting RaNET as user " + Environment.UserName);
 			_server = new MiNetServer();
@@ -34,7 +34,7 @@ namespace MiNET.Service
 		/// <summary>
 		///     Stops this instance.
 		/// </summary>
-		private void Stop()
+		public void Stop()
 		{
 			Log.Info("Stopping RaNET");
 			_server.StopServer();
