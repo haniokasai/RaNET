@@ -187,7 +187,7 @@ namespace MiNET
 
 			if (player != null)
 			{
-				player.DropInventory();
+				//player.DropInventory();
 
 				var mcpeRespawn = McpeRespawn.CreateObject();
 				mcpeRespawn.x = player.SpawnPosition.X;
@@ -197,11 +197,11 @@ namespace MiNET
 			}
 			else
 			{
-				var drops = Entity.GetDrops();
+				/*var drops = Entity.GetDrops();
 				foreach (var drop in drops)
 				{
 					Entity.Level.DropItem(Entity.KnownPosition.ToVector3(), drop);
-				}
+				}*/
 			}
 		}
 
