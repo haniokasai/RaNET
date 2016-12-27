@@ -25,7 +25,7 @@ namespace MiNET.Service
 		/// </summary>
 		private void Start()
 		{
-			Log.Info("Starting MiNET as user " + Environment.UserName);
+			Log.Info("Starting RaNET as user " + Environment.UserName);
 			_server = new MiNetServer();
 			//_server.LevelManager = new SpreadLevelManager(Environment.ProcessorCount * 4);
 			_server.StartServer();
@@ -36,7 +36,7 @@ namespace MiNET.Service
 		/// </summary>
 		private void Stop()
 		{
-			Log.Info("Stopping MiNET");
+			Log.Info("Stopping RaNET");
 			_server.StopServer();
 		}
 
@@ -51,7 +51,7 @@ namespace MiNET.Service
 			{
 				var service = new MiNetService();
 				service.Start();
-				Console.WriteLine("MiNET running. Press <enter> to stop service.");
+				Console.WriteLine("RaNET running. Press <enter> to stop service.");
 				Console.ReadLine();
 				service.Stop();
 			}
@@ -67,9 +67,9 @@ namespace MiNET.Service
 					});
 
 					host.RunAsLocalService();
-					host.SetDisplayName("MiNET Service");
-					host.SetDescription("MiNET Minecraft Pocket Edition server.");
-					host.SetServiceName("MiNET");
+					host.SetDisplayName("RaNET Service");
+					host.SetDescription("RaNET Minecraft Pocket Edition server.");
+					host.SetServiceName("RaNET");
 				});
 			}
 		}
