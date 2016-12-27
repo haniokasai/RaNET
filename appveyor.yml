@@ -10,5 +10,5 @@ build:
   verbosity: minimal
 artifacts:
 - path: src\MiNET\MiNET.Service\bin\Release
-  name: bluenet-bin
+  name: ranet-bin
 - path: src/MiNET/MiNET.Service/\**\*.nupkg
