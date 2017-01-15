@@ -135,7 +135,14 @@ namespace MiNET.Entities.Projectiles
             return metadata;
 		}
 
-		public override void OnTick()
+        public event EventHandler<ProjectileHitEventArgs> HitEvent;
+
+        protected virtual void OnHitEvent(ProjectileHitEventArgs e)
+        {
+            HitEvent?.Invoke(this, e);
+        }
+
+        public override void OnTick()
 		{
 			base.OnTick();
 
@@ -144,8 +151,8 @@ namespace MiNET.Entities.Projectiles
 			    || (Velocity.Length() <= 0 && !DespawnOnImpact && Ttl <= 0))
 			{
                 //event
-                ProjectileHitEvent phe = new ProjectileHitEvent();
-                phe.OnProjectileHitEvent(new ProjectileHitEventArgs(this.EntityId, this.Level, this.KnownPosition, this.Shooter));
+                //ProjectileHitEvent phe = new ProjectileHitEvent();
+                //phe.OnProjectileHitEvent(new ProjectileHitEventArgs(this.EntityId, this.Level, this.KnownPosition, this.Shooter));
 
                 DespawnEntity();
 				return;
