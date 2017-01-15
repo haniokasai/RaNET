@@ -368,6 +368,7 @@
     <Compile Include="Entities\Projectiles\Snowball.cs" />
     <Compile Include="Entities\Projectiles\Projectile.cs" />
     <Compile Include="Entities\Vehicles\Minecart.cs" />
+    <Compile Include="Events\Entity\ProjectileHitEvent.cs" />
     <Compile Include="GreyListManager.cs" />
     <Compile Include="HungerManager.cs" />
     <Compile Include="Inventory.cs" />

@@ -8,6 +8,7 @@ using MiNET.Blocks;
 using MiNET.Net;
 using MiNET.Utils;
 using MiNET.Worlds;
+using MiNET.Events.Entity;
 
 namespace MiNET.Entities.Projectiles
 {
@@ -142,7 +143,11 @@ namespace MiNET.Entities.Projectiles
 			    || (Velocity.Length() <= 0 && DespawnOnImpact)
 			    || (Velocity.Length() <= 0 && !DespawnOnImpact && Ttl <= 0))
 			{
-				DespawnEntity();
+                //event
+                ProjectileHitEvent phe = new ProjectileHitEvent();
+                phe.OnProjectileHitEvent(new ProjectileHitEventArgs(this.EntityId, this.Level, this.KnownPosition, this.Shooter));
+
+                DespawnEntity();
 				return;
 			}
 
