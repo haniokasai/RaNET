@@ -25,5 +25,13 @@ namespace MiNET.Worlds
 			if (entity == caller) throw new Exception("Tried to REMOVE entity for self");
 			if (entity.EntityId != EntityIdUndefined) entity.EntityId = EntityIdUndefined;
 		}
-	}
+
+        public event EventHandler<EntityEventArgs> PlayerCreated;
+
+        protected virtual void OnPlayerCreated(PlayerEventArgs e)
+        {
+            PlayerCreated?.Invoke(this, e);
+        }
+
+    }
 }

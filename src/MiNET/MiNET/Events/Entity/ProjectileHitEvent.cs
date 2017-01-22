@@ -5,7 +5,7 @@ using System;
 
 namespace MiNET.Events.Entity
 {
-    public class ProjectileHitEvent : Plugin
+    /*public class ProjectileHitEvent : Plugin
     {
         public event EventHandler<ProjectileHitEventArgs> HitEvent;
         public virtual void OnProjectileHitEvent(ProjectileHitEventArgs e)
@@ -14,7 +14,7 @@ namespace MiNET.Events.Entity
             if (handler != null) handler(this, e);
         }
 
-    }
+    }*/
 
     public class ProjectileHitEventArgs : EventArgs
     {

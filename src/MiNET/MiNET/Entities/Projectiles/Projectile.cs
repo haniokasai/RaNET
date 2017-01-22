@@ -129,13 +129,12 @@ namespace MiNET.Entities.Projectiles
             {
                 metadata[5] = new MetadataLong(Shooter.EntityId);
             }
-
             Log.Debug($"Projectile metadata: \n{MetadataDictionary.MetadataToCode(metadata)}");
 
             return metadata;
 		}
 
-        public event EventHandler<ProjectileHitEventArgs> HitEvent;
+       public event EventHandler<ProjectileHitEventArgs> HitEvent;
 
         protected virtual void OnHitEvent(ProjectileHitEventArgs e)
         {
@@ -151,6 +150,7 @@ namespace MiNET.Entities.Projectiles
 			    || (Velocity.Length() <= 0 && !DespawnOnImpact && Ttl <= 0))
 			{
                 //event
+                OnHitEvent(new ProjectileHitEventArgs(this.EntityId, this.Level, this.KnownPosition, this.Shooter));
                 //ProjectileHitEvent phe = new ProjectileHitEvent();
                 //phe.OnProjectileHitEvent(new ProjectileHitEventArgs(this.EntityId, this.Level, this.KnownPosition, this.Shooter));
 
